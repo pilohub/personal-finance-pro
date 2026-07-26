@@ -1,8 +1,6 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
-
   config.enable_reloading = false
   config.eager_load = true
   config.consider_all_requests_local = false
@@ -24,7 +22,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.active_record.attributes_for_inspect = [ :id ]
 
-  # Action Mailer Fixed Production Settings using Environment Variables
+  # --- GMAIL SMTP DIRECT CONFIG (100% WORKING) ---
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
@@ -32,11 +30,10 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'gmail.com',
-    user_name:            ENV['MAIL_USERNAME'],
-    password:             ENV['MAIL_PASSWORD'],
+    user_name:            'pilovadadoriya@gmail.com',
+    password:             'zfhimzpcsgszvjku',
     authentication:       'plain',
     enable_starttls_auto: true
   }
   config.action_mailer.default_url_options = { host: 'personal-finance-pro.onrender.com', protocol: 'https' }
-
 end
