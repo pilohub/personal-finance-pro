@@ -1,0 +1,9 @@
+<div class="main-container" style="max-width: 500px;">
+  <h1>New Expense</h1>
+  
+  <%= render "form", expense: @expense %>
+  
+  <div style="text-align: center; margin-top: 20px;">
+    <%= link_to "Back to Expenses", expenses_path, style: "color: #7f8c8d; text-decoration: none;" %>
+  </div>
+</div>

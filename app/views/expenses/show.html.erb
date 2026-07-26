@@ -1,0 +1,17 @@
+<div class="main-container" style="max-width: 500px;">
+  <p style="color: #27ae60; text-align: center; font-weight: bold;"><%= notice %></p>
+  
+  <h1>Expense Details</h1>
+  
+  <div class="show-details">
+    <p><strong>Title:</strong> <%= @expense.title %></p>
+    <p><strong>Amount:</strong> <span class="amount">₹<%= @expense.amount %></span></p>
+    <p><strong>Category:</strong> <%= @expense.category %></p>
+    <p><strong>Date:</strong> <%= @expense.date.strftime("%d %b, %Y") if @expense.date %></p>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px;">
+    <%= link_to "Edit", edit_expense_path(@expense), class: "btn-custom", style: "margin-right: 10px;" %>
+    <%= link_to "Back", expenses_path, class: "btn-custom" %>
+  </div>
+</div>

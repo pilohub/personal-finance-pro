@@ -1,0 +1,255 @@
+/* Clean Space, Glass Effect & Soft 3D Shadows Mix */
+body {
+  background-color: #e0e5ec;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #2c3e50;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+  margin: 0;
+}
+
+.main-container {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 10px 10px 20px rgb(163,177,198,0.6), -10px -10px 20px rgba(255,255,255, 0.8);
+}
+
+h1 {
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+}
+
+.btn-custom {
+  display: inline-block;
+  background-color: #e0e5ec;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  color: #2c3e50;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 5px 5px 10px #a3b1c6, -5px -5px 10px #ffffff;
+  transition: all 0.2s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.btn-custom:hover {
+  box-shadow: inset 5px 5px 10px #a3b1c6, inset -5px -5px 10px #ffffff;
+  color: #3498db;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 18px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+td.amount {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.action-links a {
+  text-decoration: none;
+  color: #3498db;
+  margin-right: 15px;
+  font-size: 0.9rem;
+}
+
+
+/* Form & Show Page Styling (Neumorphic Inset) */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: inset 4px 4px 8px #c8d0e7, inset -4px -4px 8px #ffffff;
+  box-sizing: border-box;
+  font-size: 1rem;
+  color: #2c3e50;
+  font-family: inherit;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: inset 2px 2px 5px #c8d0e7, inset -2px -2px 5px #ffffff;
+}
+
+.show-details p {
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding-bottom: 10px;
+  margin-top: 15px;
+}
+
+/* --- Pro Dashboard Upgrades --- */
+
+/* Grid Layout for KPIs */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Glassmorphism + Neumorphism + Clinical Minimalism Card */
+.glass-neu-card {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 8px 8px 20px rgba(163, 177, 198, 0.4), -8px -8px 20px rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.kpi-title {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.kpi-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.kpi-value.danger { color: #e74c3c; }
+.kpi-value.success { color: #27ae60; }
+
+/* Flex layout for charts and budget */
+.analytics-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.chart-container {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Budget Progress Bar (Inner Neumorphism) */
+.budget-section {
+  text-align: left;
+  margin-top: 15px;
+}
+
+.progress-track {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  height: 12px;
+  margin-top: 8px;
+  overflow: hidden;
+  box-shadow: inset 3px 3px 6px rgba(163, 177, 198, 0.5), inset -3px -3px 6px rgba(255, 255, 255, 0.9);
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  height: 100%;
+  border-radius: 10px;
+  width: 0%; /* JS thi update thase */
+  transition: width 1s ease-in-out;
+}
+
+/* --- PHASE 3: DARK MODE STYLES --- */
+body.dark-mode {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .main-container, 
+body.dark-mode .glass-neu-card {
+  background: rgba(20, 20, 40, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5), -8px -8px 20px rgba(40, 40, 60, 0.4);
+}
+
+body.dark-mode h1, 
+body.dark-mode h3, 
+body.dark-mode .kpi-title, 
+body.dark-mode .kpi-value {
+  color: #e0e0e0;
+}
+
+body.dark-mode .kpi-value.danger { color: #ff7675; }
+body.dark-mode .kpi-value.success { color: #55efc4; }
+
+body.dark-mode th {
+  color: #a0a0a0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .btn-custom {
+  background-color: #1f1f3a;
+  color: #e0e0e0;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4), -5px -5px 10px rgba(50, 50, 70, 0.3);
+}
+
+body.dark-mode .btn-custom:hover {
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.4), inset -5px -5px 10px rgba(50, 50, 70, 0.3);
+  color: #74b9ff;
+}
+
+body.dark-mode .form-control {
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Filter form background in dark mode */
+body.dark-mode .analytics-section + div > div:first-of-type,
+body.dark-mode form > strong {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #e0e0e0 !important;
+}

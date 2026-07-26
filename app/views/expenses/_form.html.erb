@@ -1,0 +1,36 @@
+<%= form_with(model: expense) do |form| %>
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control", placeholder: "e.g. Laptop Repair" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :amount, "Amount (₹)" %>
+    <%= form.number_field :amount, step: "0.01", class: "form-control", placeholder: "0.00" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :category %>
+    <%= form.text_field :category, class: "form-control", placeholder: "e.g. Electronics" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :date %>
+    <%= form.date_field :date, class: "form-control" %>
+  </div>
+
+  <div style="margin-bottom: 25px; text-align: left; background: rgba(255,255,255,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.5);">
+    <%= form.label :necessity, "Was this necessary? (Guilt Meter)", style: "color: #2c3e50; font-size: 0.95rem; font-weight: 500; margin-bottom: 10px; display: block;" %>
+    
+    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #7f8c8d; margin-bottom: 5px;">
+      <span>🟢 Absolute Need (1)</span>
+      <span>🔴 Total Waste (5)</span>
+    </div>
+    
+    <%= form.range_field :necessity, in: 1..5, step: 1, class: "form-control", style: "width: 100%; cursor: pointer;" %>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px;">
+    <%= form.submit "Save Expense", class: "btn-custom" %>
+  </div>
+<% end %>

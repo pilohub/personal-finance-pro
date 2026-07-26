@@ -1,0 +1,39 @@
+<div class="main-container" style="max-width: 450px; margin: 80px auto;">
+  <div class="glass-neu-card" style="padding: 40px 30px;">
+    <h2 style="margin-bottom: 30px; font-weight: 300; color: #2c3e50; text-align: center;">Create Account</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      
+      <!-- Error Messages -->
+      <div style="color: #e74c3c; text-align: left; margin-bottom: 15px; font-size: 0.9rem;">
+        <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+
+      <div style="margin-bottom: 20px; text-align: left;">
+        <%= f.label :email, style: "color: #7f8c8d; font-size: 0.9rem; margin-bottom: 5px; display: block;" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", style: "width: 100%; padding: 12px; border-radius: 10px; box-sizing: border-box;" %>
+      </div>
+
+      <div style="margin-bottom: 20px; text-align: left;">
+        <%= f.label :password, style: "color: #7f8c8d; font-size: 0.9rem; margin-bottom: 5px; display: block;" %>
+        <% if @minimum_password_length %>
+          <em style="font-size: 0.8rem; color: #95a5a6;">(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control", style: "width: 100%; padding: 12px; border-radius: 10px; box-sizing: border-box;" %>
+      </div>
+
+      <div style="margin-bottom: 25px; text-align: left;">
+        <%= f.label :password_confirmation, style: "color: #7f8c8d; font-size: 0.9rem; margin-bottom: 5px; display: block;" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", style: "width: 100%; padding: 12px; border-radius: 10px; box-sizing: border-box;" %>
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <%= f.submit "Sign up", class: "btn-custom", style: "width: 100%; padding: 12px; font-size: 1.1rem;" %>
+      </div>
+    <% end %>
+
+    <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.1);">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
