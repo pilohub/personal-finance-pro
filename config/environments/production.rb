@@ -14,15 +14,15 @@ Rails.application.configure do
   config.silence_healthcheck_path = "/up"
   config.active_support.report_deprecations = false
 
-  config.cache_store = :solid_cache_store
-  config.active_job.queue_adapter = :solid_queue
-  config.solid_queue.connects_to = { database: { writing: :queue } }
+  # Fixed for Render Free Tier (No database migration required)
+  config.cache_store = :memory_store
+  config.active_job.queue_adapter = :async
 
   config.i18n.fallbacks = true
   config.active_record.dump_schema_after_migration = false
   config.active_record.attributes_for_inspect = [ :id ]
 
-  # --- GMAIL SMTP DIRECT CONFIG (100% WORKING) ---
+  # --- GMAIL SMTP DIRECT CONFIG ---
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
