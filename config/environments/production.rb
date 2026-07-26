@@ -94,7 +94,7 @@ config.action_mailer.delivery_method = :smtp
     port:                 587,
     domain:               'gmail.com',
     user_name:            'pilovadadoriya@gmail.com',
-    password:             'zfhi mzpc sgsz vjku',
+    password:             'zfhimzpcsgszvjku',
     authentication:       'plain',
     enable_starttls_auto: true
   }
