@@ -87,17 +87,16 @@ Rails.application.configure do
   #
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
-
 config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'gmail.com',
-    user_name:            'pilovadadoriya@gmail.com',
-    password:             'zfhimzpcsgszvjku',
+    user_name:            ENV['MAIL_USERNAME'],
+    password:             ENV['MAIL_PASSWORD'],
     authentication:       'plain',
     enable_starttls_auto: true
   }
   config.action_mailer.default_url_options = { host: 'personal-finance-pro.onrender.com', protocol: 'https' }
-
+  config.action_mailer.raise_delivery_errors = true
 end
